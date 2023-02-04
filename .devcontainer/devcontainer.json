@@ -1,0 +1,16 @@
+{
+    "name": "Flutter with Android Studio",
+    "dockerFile": "Dockerfile",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "ms-vscode-remote.remote-containers",
+        "ms-python.python",
+        "Dart-Code.flutter",
+        "vscjava.vscode-java-pack"
+    ],
+    "forwardPorts": [8080, 8081],
+    "postCreateCommand": "flutter create . && flutter doctor && sdkmanager --install 'system-images;android-30;google_apis;x86' && avdmanager create avd -n test -k 'system-images;android-30;google_apis;x86'",
+    "remoteUser": "vscode"
+}
